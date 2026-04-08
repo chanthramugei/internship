@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Skillset (Centered Design)</title>
+    <link rel="stylesheet" href="profile2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">Profile Skillset</h1>
+        <div class="skill-input-container">
+            <input type="text" id="skillInput" placeholder="JS">
+            <button id="addSkillBtn">Add</button>
+        </div>
+    </header>  
+    
+    <main class="container">
+        <div class="profile-card">
+            <div class="profile-info-wrapper">
+                <div class="profile-info-section">
+                    <img src="v.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="profile-details">
+                        <h2>Taehyung</h2>
+                        <p><i class="fa-solid fa-envelope"></i> Taehyung@gmail.com</p>
+                        <p><i class="fa-solid fa-location-dot"></i> Seoul</p>
+                        <p><i class="fa-solid fa-phone"></i> 8989787878</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-section">
+                <h3>SKILLS</h3>
+                <div class="skills-list" id="skillsList">
+                    <span class="skill-tag">HTML <i class="fa-solid fa-xmark remove-skill"></i></span>
+                    <span class="skill-tag">CSS <i class="fa-solid fa-xmark remove-skill"></i></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="profile2.js"></script>
+</body>
+</html>

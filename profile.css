@@ -1,0 +1,228 @@
+:root {
+    --bg-color: #f5eff5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --header-bg: #6a3a83;
+    --header-text: #ffffff;
+    --border-color: #e0e0e0;
+    --tag-bg: #d0aeda;
+    --tag-text: #4e2a60;
+    --btn-primary: #522765;
+    --btn-primary-hover: #401f4e;
+}
+
+[data-theme="dark"] {
+    --bg-color: #212121;
+    --card-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --text-muted: #cccccc;
+    --header-bg: #5a2e6e;
+    --header-text: #ffffff;
+    --border-color: #444444;
+    --tag-bg: #4a4a4a;
+    --tag-text: #e0e0e0;
+    --btn-primary: #5c307a;
+    --btn-primary-hover: #7b43a1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0 10px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.skill-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#skillInput {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+}
+
+#addSkillBtn {
+    padding: 8px 15px;
+    background-color: var(--btn-primary);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+#addSkillBtn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+#themeToggleBtn {
+    background: rgba(0,0,0,0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+#themeToggleBtn:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+.container {
+    padding: 40px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.profile-info-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--header-bg);
+}
+
+.profile-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.profile-details p {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.profile-details i {
+    width: 16px;
+    text-align: center;
+}
+
+.skills-section h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.skill-tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.remove-skill {
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #b52a2a;
+    transition: color 0.2s;
+}
+
+[data-theme="dark"] .remove-skill {
+    color: #ff6b6b;
+}
+
+.remove-skill:hover {
+    color: #d11a1a;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.primary-btn {
+    background-color: var(--btn-primary);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Print specific styles */
+@media print {
+    body { background-color: white; color: black; }
+    .header { display: none; }
+    .action-buttons { display: none; }
+    .remove-skill { display: none; }
+    .profile-card { border: none; box-shadow: none; padding: 0; margin-top: 0; max-width: 100%; border-radius: 0; }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Congratulations Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Georgia", serif;
+    }
+
+    body {
+      height: 100vh;
+      background: #dfe6eb;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top bar */
+    .top-bar {
+      height: 60px;
+      background: #7faec2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .datetime {
+      background: #f2f2f2;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Background dots */
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: radial-gradient(#c9d2d9 1px, transparent 1px);
+      background-size: 25px 25px;
+    }
+
+    /* Card */
+    .card {
+      width: 360px;
+      background: #b9d0d7;
+      border-radius: 15px;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      color: #0d7a7a;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .college {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      width: 70px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="datetime" id="datetime"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="card">
+      <h2>Congratulations</h2>
+
+      <!-- Avatar -->
+      <img src="v.jpg" alt="avatar" class="avatar">
+
+      <div class="name">Taehyung</div>
+
+      <div class="college">
+        Vishnu Institute of Computer Education and Technology,<br>
+        Bhimavaram
+      </div>
+
+      <!-- Ubuntu logo -->
+      <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" class="logo">
+    </div>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+
+      const options = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      };
+
+      const date = now.toLocaleDateString('en-GB', options);
+      const time = now.toLocaleTimeString();
+
+      document.getElementById("datetime").innerText = `${date}, ${time}`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+</body>
+</html>
